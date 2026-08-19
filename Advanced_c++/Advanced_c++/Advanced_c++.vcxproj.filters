@@ -24,12 +24,18 @@
     <ClCompile Include="Booksuni.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="multi_threading.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Smartpointers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Booksuni.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multi_threading.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

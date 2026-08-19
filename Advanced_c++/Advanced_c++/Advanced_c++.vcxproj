@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="Advanced_c++.cpp" />
     <ClCompile Include="Booksuni.cpp" />
+    <ClCompile Include="multi_threading.cpp" />
     <ClCompile Include="Smartpointers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Booksuni.h" />
+    <ClInclude Include="multi_threading.h" />
     <ClInclude Include="Smartpointers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
