@@ -15,7 +15,7 @@ public:
 
 	void threadcallingfunction();
 	void mutexcallingfunction();
-	
+	void calling_alarm_sleeper();
 
 
 };

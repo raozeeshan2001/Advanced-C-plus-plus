@@ -2,8 +2,14 @@
 #include <iostream>
 #include <thread>
 #include <mutex>
+#include <condition_variable>
+#include <chrono>
+
 using namespace std;
 
+bool alarmrang = false;
+std::mutex mutex3;
+std::condition_variable cw;
 std::mutex mtx;
 
  void multi_threading::counter1() {
@@ -49,6 +55,24 @@ std::mutex mtx;
      std::lock_guard<std::mutex> lock(mtx);
      return balance;
  }
+ void alarm() {
+     //cw
+     std::this_thread::sleep_for(std::chrono::seconds(2));
+     {
+         std::lock_guard<std::mutex>lock(mutex3);
+         alarmrang = true;
+         std::cout << "alarm! ring rang!.." << std::endl;
+     }
+     cw.notify_one();
+ }
+ void sleeper() {
+     // cw problem
+     std::unique_lock<std::mutex>lock(mutex3);
+     std::cout << "sleeper going to sleep" << std::endl;
+     cw.wait(lock, [] {return alarmrang;});
+     std::cout << "Woke up! Time to go to work." << std::endl;
+ }
+
  void multi_threading::threadcallingfunction() {
 
      std::thread t1(&multi_threading::counter1,this);
@@ -64,4 +88,12 @@ std::mutex mtx;
      t1.join();
      t2.join();
      cout << "final balance is: " <<getbalance();
+ }
+ 
+ void multi_threading::calling_alarm_sleeper() {
+
+     std::thread t1(alarm);
+     std::thread t2(sleeper);
+     t1.join();
+     t2.join();
  }
