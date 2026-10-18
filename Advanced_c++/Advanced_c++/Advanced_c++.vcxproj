@@ -145,12 +145,14 @@
     <ClCompile Include="Booksuni.cpp" />
     <ClCompile Include="multi_threading.cpp" />
     <ClCompile Include="Smartpointers.cpp" />
+    <ClCompile Include="TCPNetworking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BankAccount.h" />
     <ClInclude Include="Booksuni.h" />
     <ClInclude Include="multi_threading.h" />
     <ClInclude Include="Smartpointers.h" />
+    <ClInclude Include="TCPNetworking.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

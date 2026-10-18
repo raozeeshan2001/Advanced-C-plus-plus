@@ -7,6 +7,7 @@
 #include "Booksuni.h"
 #include "BankAccount.h"
 #include "multi_threading.h"
+#include "TCPNetworking.h"
 #include <thread>
 #include <mutex>
 
@@ -39,7 +40,8 @@ int main()
    // Booksuni book3 = std::move(book1);
    // book3 = book2;
    // book3 = std::move(book2);
-    multi_threading mt;
+    //multi_threading mt;
+    TCPNetworking tcpobj;
  
    /* mt.threadcallingfunction();
     mt.mutexcallingfunction();*/
@@ -54,7 +56,11 @@ int main()
     std::cout << "A: " << accountA.balance << "\n";
     std::cout << "B: " << accountB.balance << "\n";*/
     //////////////////////////////////////////////
-    mt.calling_alarm_sleeper();
+   // mt.calling_alarm_sleeper();
+    
+
+    tcpobj.TCPServer();
+   
 
     return 0;
 
